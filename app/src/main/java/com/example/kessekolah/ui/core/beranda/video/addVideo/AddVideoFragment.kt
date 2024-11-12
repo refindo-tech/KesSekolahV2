@@ -68,7 +68,7 @@ class AddVideoFragment : Fragment() {
             selectedCategory = videoData?.category
             selectCategoryChip(videoData?.category)
             numberIlus = videoData?.dataIlus ?: 0
-            tvPilihIlustrasi.text = "Ilustrasi $numberIlus dipilih!"
+            tvPilihIlustrasi.text = "Illustration $numberIlus selected!"
         }
     }
 
@@ -101,7 +101,7 @@ class AddVideoFragment : Fragment() {
             listAdapter.setOnItemClickCallback(object : IlusPickerAdapter.OnItemClickCallback {
                 override fun onItemClicked(data: Int) {
                     numberIlus = data
-                    tvPilihIlustrasi.text = "Ilustrasi $data dipilih!"
+                    tvPilihIlustrasi.text = "Illustration $data selected!"
                 }
             })
 

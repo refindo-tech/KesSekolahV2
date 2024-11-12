@@ -150,7 +150,7 @@ class DetailQuestionFragment : Fragment() {
     private fun showDialog(dataAnswer: Answer) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.title_dialog_question_delete))
-            .setMessage("Jawaban dari \"${data.name}\" akan dihapus dari database")
+            .setMessage("answers from \"${data.name}\" will be deleted from the database")
             .setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }

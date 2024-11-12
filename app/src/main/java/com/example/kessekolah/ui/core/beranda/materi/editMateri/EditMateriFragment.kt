@@ -65,7 +65,7 @@ class EditMateriFragment : Fragment() {
     private fun setupData() = with(binding.inForm) {
         textJudulMateri.setText(data.judul)
         textTahun.setText(data.tahun)
-        tvPilihIlustrasi.setText("Ilustrasi ${data.dataIlus} dipilih!")
+        tvPilihIlustrasi.setText("Illustration ${data.dataIlus} selected!")
         btnAddFile.setText(data.fileName)
 
         val listAdapter = IlusPickerAdapter(listIlus)
@@ -75,7 +75,7 @@ class EditMateriFragment : Fragment() {
         listAdapter.setOnItemClickCallback(object: IlusPickerAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Int) {
                 numberIlus = data
-                tvPilihIlustrasi.text = "Ilustrasi $data dipilih!"
+                tvPilihIlustrasi.text = "Illustration $data selected!"
             }
 
         })
@@ -90,7 +90,7 @@ class EditMateriFragment : Fragment() {
             if (mJudul.isEmpty() || mTahun.isEmpty() || numberIlus == 0) {
                 Toast.makeText(
                     requireContext(),
-                    "Lengkapi inputan",
+                    "Complete the input",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
@@ -104,9 +104,9 @@ class EditMateriFragment : Fragment() {
 
     private fun responseHandler(isError: Boolean) {
         if (isError) {
-            Toast.makeText(requireContext(), "Data materi gagal dirubah", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Data lesson failed to change", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(requireContext(), "Data materi berhasil dirubah", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Data lesson successfully changed", Toast.LENGTH_SHORT).show()
             findNavController().navigateUp()
             findNavController().previousBackStackEntry?.also {
                 it.savedStateHandle.set("updateBookmarks", true)

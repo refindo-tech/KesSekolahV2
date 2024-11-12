@@ -9,7 +9,7 @@
         android:id="@+id/tv_quiz_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pertanyaan"
+        android:text="@string/hint_questions"
         android:textSize="18sp"
         android:paddingBottom="16dp"/>
 
@@ -22,37 +22,37 @@
             android:id="@+id/radio_sangat_tidak_setuju"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sangat Tidak Setuju"/>
+            android:text="@string/answer_sts"/>
 
         <RadioButton
             android:id="@+id/radio_tidak_setuju"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tidak Setuju"/>
+            android:text="@string/answer_ts"/>
 
         <RadioButton
             android:id="@+id/radio_netral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Netral"/>
+            android:text="@string/answer_n"/>
 
         <RadioButton
             android:id="@+id/radio_setuju"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Setuju"/>
+            android:text="@string/answer_s"/>
 
         <RadioButton
             android:id="@+id/radio_sangat_setuju"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sangat Setuju"/>
+            android:text="@string/answer_ss"/>
     </RadioGroup>
 
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lanjut"
+        android:text="@string/hint_next"
         android:layout_marginTop="16dp"/>
 </LinearLayout>

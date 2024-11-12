@@ -40,7 +40,7 @@ class AddMateriFragment : Fragment() {
     private val viewModel: AddMateriViewModel by viewModels()
 
     private lateinit var auth: FirebaseAuth
-    private val materiRef = FirebaseDatabase.getInstance().getReference("materi")
+    private val materiRef = FirebaseDatabase.getInstance().getReference("lessons")
     private val storage = FirebaseStorage.getInstance().reference
 
     override fun onCreateView(
@@ -72,7 +72,7 @@ class AddMateriFragment : Fragment() {
                 override fun onItemClicked(data: Int) {
                     // get data ilus, Int type
                     numberIlus = data
-                    tvPilihIlustrasi.text = "Ilustrasi $data dipilih!"
+                    tvPilihIlustrasi.text = "Illustration $data Selected!"
                 }
             })
 
@@ -112,7 +112,7 @@ class AddMateriFragment : Fragment() {
                 if (mJudul.isEmpty() || mTahun.isEmpty() || numberIlus == 0 || file == null || selectedCategory == null) {
                     Toast.makeText(
                         requireContext(),
-                        "Lengkapi inputan",
+                        "complete the input",
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
@@ -121,7 +121,7 @@ class AddMateriFragment : Fragment() {
                     if (fileExtension != "pdf" && fileExtension != "png") {
                         Toast.makeText(
                             requireContext(),
-                            "Pilih file dengan format PDF atau PNG",
+                            "Select file in PDF or PNG format",
                             Toast.LENGTH_SHORT
                         ).show()
                     } else {
@@ -158,7 +158,7 @@ class AddMateriFragment : Fragment() {
                 val newId = highestId + 1
                 val fileExtension = file.extension
                 val fileId = UUID.randomUUID().toString()
-                val fileRef = storage.child("materi/${user.uid}/$fileId.$fileExtension")
+                val fileRef = storage.child("lessons/${user.uid}/$fileId.$fileExtension")
 
                 val metadata = storageMetadata {
                     setCustomMetadata("owner", user.uid)
@@ -190,11 +190,11 @@ class AddMateriFragment : Fragment() {
                                 .addOnCompleteListener { task ->
                                     if (task.isSuccessful) {
                                         viewModel.setLoading(false)
-                                        Toast.makeText(requireContext(), "Materi berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(requireContext(), "Lesson successfully added", Toast.LENGTH_SHORT).show()
                                         findNavController().navigateUp()
                                     } else {
                                         viewModel.setLoading(false)
-                                        Toast.makeText(requireContext(), "Gagal menambahkan materi", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(requireContext(), "failed to add lesson", Toast.LENGTH_SHORT).show()
                                     }
                                 }
                         }

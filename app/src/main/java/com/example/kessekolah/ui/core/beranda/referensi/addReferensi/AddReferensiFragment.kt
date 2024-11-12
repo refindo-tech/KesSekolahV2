@@ -2,23 +2,19 @@ package com.example.kessekolah.ui.core.beranda.referensi.addReferensi
 
 import android.app.ProgressDialog
 import android.net.Uri
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.atwa.filepicker.core.FilePicker
-import com.example.kessekolah.R
-import com.example.kessekolah.databinding.FragmentAddMateriBinding
 import com.example.kessekolah.databinding.FragmentAddReferensiBinding
 import com.example.kessekolah.ui.adapter.IlusPickerAdapter
-import com.example.kessekolah.ui.core.beranda.materi.addMateri.AddMateriViewModel
-import com.google.android.material.chip.Chip
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -41,7 +37,7 @@ class AddReferensiFragment : Fragment() {
     private val viewModel: AddReferensiViewModel by viewModels()
 
     private lateinit var auth: FirebaseAuth
-    private val materiRef = FirebaseDatabase.getInstance().getReference("referensi")
+    private val materiRef = FirebaseDatabase.getInstance().getReference("references")
     private val storage = FirebaseStorage.getInstance().reference
 
     override fun onCreateView(
@@ -73,7 +69,7 @@ class AddReferensiFragment : Fragment() {
                 override fun onItemClicked(data: Int) {
                     // get data ilus, Int type
                     numberIlus = data
-                    tvPilihIlustrasi.text = "Ilustrasi $data dipilih!"
+                    tvPilihIlustrasi.text = "Illustration $data selected!"
                 }
             })
 
@@ -106,7 +102,7 @@ class AddReferensiFragment : Fragment() {
                 if (mJudul.isEmpty() || mTahun.isEmpty() || numberIlus == 0 || file == null) {
                     Toast.makeText(
                         requireContext(),
-                        "Lengkapi inputan",
+                        "Complete the input",
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
@@ -115,7 +111,7 @@ class AddReferensiFragment : Fragment() {
                     if (fileExtension != "pdf" && fileExtension != "png") {
                         Toast.makeText(
                             requireContext(),
-                            "Pilih file dengan format PDF atau PNG",
+                            "Select file in PDF or PNG format",
                             Toast.LENGTH_SHORT
                         ).show()
                     } else {
@@ -152,7 +148,7 @@ class AddReferensiFragment : Fragment() {
                 val newId = highestId + 1
                 val fileExtension = file.extension
                 val fileId = UUID.randomUUID().toString()
-                val fileRef = storage.child("referensi/${user.uid}/$fileId.$fileExtension")
+                val fileRef = storage.child("references/${user.uid}/$fileId.$fileExtension")
 
                 val metadata = storageMetadata {
                     setCustomMetadata("owner", user.uid)
@@ -184,11 +180,11 @@ class AddReferensiFragment : Fragment() {
                                 .addOnCompleteListener { task ->
                                     if (task.isSuccessful) {
                                         viewModel.setLoading(false)
-                                        Toast.makeText(requireContext(), "Materi berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(requireContext(), "Lesson successfully added", Toast.LENGTH_SHORT).show()
                                         findNavController().navigateUp()
                                     } else {
                                         viewModel.setLoading(false)
-                                        Toast.makeText(requireContext(), "Gagal menambahkan materi", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(requireContext(), "failed to add lesson", Toast.LENGTH_SHORT).show()
                                     }
                                 }
                         }

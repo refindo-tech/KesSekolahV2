@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorSurface"
             app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
-            app:title="Edit Materi"
+            app:title="Edit Lesson"
             app:titleTextAppearance="@style/Theme.IniDesakuBeta.Text.NavbarTitlee"
             app:titleCentered="true">
 
@@ -48,7 +48,7 @@
         android:layout_height="50dp"
         android:layout_margin="16dp"
         android:fontFamily="@font/fredoka_medium"
-        android:text="Submit Perubahan"
+        android:text="@string/submit"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:cornerRadius="6dp"

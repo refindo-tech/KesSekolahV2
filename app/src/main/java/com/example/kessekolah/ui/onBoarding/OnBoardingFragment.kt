@@ -106,7 +106,9 @@ class OnBoardingFragment : Fragment() {
             1 -> {
                 binding.onBoardingImageContent.setImageResource(R.drawable.image_onboarding2)
                 binding.onBoardingImageContent.invalidate() // Invalidate the view
-                binding.onBoardingDescription.text = "Selamat Datang!"
+                binding.onBoardingDescription.visibility = View.VISIBLE
+                binding.tvHint.visibility = View.GONE
+                binding.onBoardingDescription.text = getString(R.string.hint_welcome)
                 binding.onBoardingDescription.apply {
                     textSize = 31f
                     typeface = null
@@ -114,7 +116,9 @@ class OnBoardingFragment : Fragment() {
             }
             2 -> {
                 binding.onBoardingImageContent.setImageResource(R.drawable.image_onboarding)
-                binding.onBoardingDescription.text = "KesSekolah adalah pembelajaran kesehatan yang bisa diakses kapan pun dan di mana pun!"
+                binding.onBoardingDescription.text = getString(R.string.onboarding_description)
+                binding.onBoardingDescription.visibility = View.VISIBLE
+                binding.tvHint.visibility = View.GONE
                 binding.onBoardingDescription.apply {
                     textSize = 16f
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -127,34 +131,34 @@ class OnBoardingFragment : Fragment() {
                 binding.onBoardingImageContent.setImageResource(R.drawable.tampilanhome)
                 binding.onBoardingDescription.visibility = View.GONE
                 binding.tvHint.visibility = View.VISIBLE
-                binding.tvHint.text = "Pada halaman utama aplikasi, Anda akan menemukan empat ikon menu utama yang membantu memudahkan navigasi dalam aplikasi."
+                binding.tvHint.text = getString(R.string.description_home)
             }
 
             4 -> {
                 binding.onBoardingImageContent.setImageResource(R.drawable.listmateri)
                 binding.onBoardingDescription.visibility = View.GONE
                 binding.tvHint.visibility = View.VISIBLE
-                binding.tvHint.text = "Pada menu materi, Anda dapat mengakses berbagai artikel dan panduan kesehatan yang berkaitan dengan kehidupan di sekolah."
+                binding.tvHint.text = getString(R.string.description_lesson)
             }
 
             5 -> {
                 binding.onBoardingImageContent.setImageResource(R.drawable.listvideo)
                 binding.onBoardingDescription.visibility = View.GONE
                 binding.tvHint.visibility = View.VISIBLE
-                binding.tvHint.text = "Bagian ini menyediakan video informatif dan edukatif tentang kesehatan."
+                binding.tvHint.text = getString(R.string.description_video)
             }
 
             6 -> {
-                binding.btnNext.text = "Yuk Belajar!"
+                binding.btnNext.text = getString(R.string.next_study)
                 binding.onBoardingImageContent.setImageResource(R.drawable.listpertanyaan)
                 binding.onBoardingDescription.visibility = View.GONE
                 binding.tvHint.visibility = View.VISIBLE
-                binding.tvHint.text = "Anda bisa mengajukan pertanyaan langsung kepada ahli kesehatan sekolah. Fitur ini dirancang untuk memberikan saran dan jawaban atas pertanyaan seputar kesehatan yang diajukan oleh siswa."
+                binding.tvHint.text = getString(R.string.description_askexpert)
             }
 
             else -> {
                 binding.onBoardingImageContent.setImageResource(R.drawable.image_onboarding2)
-                binding.onBoardingDescription.text = "Selamat Datang!"
+                binding.onBoardingDescription.text = getString(R.string.hint_welcome)
                 binding.onBoardingDescription.apply {
                     textSize = 31f
                     typeface = null

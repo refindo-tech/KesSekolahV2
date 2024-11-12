@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/fredoka_semibold"
-            android:text="Pertanyaan :"
+            android:text="@string/tv_questions_title"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

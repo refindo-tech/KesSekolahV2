@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-8dp"
                 android:gravity="center"
-                android:text="KesSekolah"
+                android:text="@string/app_name"
                 android:textColor="@color/primary3"
                 android:textStyle="bold"
                 android:textSize="28sp"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
                 android:gravity="center"
-                android:text="Edukasi Kesehatan Untuk Sekolah"
+                android:text="@string/hint_kessekolah"
                 android:textColor="@color/primary3"
                 android:textFontWeight="400"
                 android:textSize="18sp"
@@ -64,11 +64,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                android:text="Deskripsi"
                 android:textColor="@color/light4"
                 android:textSize="16sp"
                 android:fontFamily="@font/fredoka_regular"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                tools:text="deskripsi"/>
         </LinearLayout>
     </ScrollView>
 
@@ -77,7 +77,7 @@
         style="@style/Theme.IniDesakuBeta.Button."
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="Kembali"
+        android:text="@string/kembali"
         android:textAllCaps="false"
         app:cornerRadius="5dp"
         android:backgroundTint="@color/primary3"

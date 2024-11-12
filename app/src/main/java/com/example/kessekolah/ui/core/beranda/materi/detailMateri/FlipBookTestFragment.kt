@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.pdf.PdfRenderer
-import android.net.Uri
 import android.os.Bundle
 import android.os.ParcelFileDescriptor
 import android.util.Log
@@ -61,10 +60,10 @@ class FlipBookTestFragment : Fragment() {
     private lateinit var dataLogin: LoginData
 
     private val questions = listOf(
-        "Apakah Anda merasa isi materi ini mudah dipahami?",
-        "Apakah penyajian materi ini menarik dan nyaman dilihat?",
-        "Apakah elemen visual di aplikasi ini cukup jelas dan membantu?",
-        "Apakah aplikasi ini dapat mendukung proses pembelajaran kesehatan?"
+        "Do you feel that the content of this lesson is easy to understand?",
+        "Is the presentation of this lesson engaging and visually comfortable?",
+        "Are the visual elements in this app clear and helpful?",
+        "Does this app support the health learning process?"
     )
 
     private val answers = mutableListOf<String?>()
@@ -106,7 +105,7 @@ class FlipBookTestFragment : Fragment() {
         if (data != null) {
             materiBookMark = data
         } else {
-            Toast.makeText(requireContext(), "Data tidak tersedia", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Data not found", Toast.LENGTH_SHORT).show()
         }
 
         binding.topAppBar.setOnMenuItemClickListener { item ->
@@ -306,7 +305,7 @@ class FlipBookTestFragment : Fragment() {
         nextButton.setOnClickListener {
             val selectedOptionId = radioGroup.checkedRadioButtonId
             if (selectedOptionId == -1) {
-                Toast.makeText(requireContext(), "Pilih jawaban terlebih dahulu", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Select the answer first", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -325,7 +324,7 @@ class FlipBookTestFragment : Fragment() {
             } else {
                 // Submit the answers
                 dialog.dismiss()
-                Toast.makeText(requireContext(), "Quiz selesai. Jawaban: $answers", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Quiz finished. Answer: $answers", Toast.LENGTH_LONG).show()
                 findNavController().navigateUp() // Navigate up after submit
             }
         }

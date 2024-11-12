@@ -104,7 +104,7 @@
         android:id="@+id/tv_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tambahkan Gambar (Opsional)"
+        android:text="@string/tv_add_image"
         android:theme="@style/Theme.IniDesakuBeta.Text.Headline6"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,5 +128,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="4dp"
-        android:text="Klik gambar untuk mengganti" />
+        android:text="@string/tv_image_selection" />
 </androidx.constraintlayout.widget.ConstraintLayout>

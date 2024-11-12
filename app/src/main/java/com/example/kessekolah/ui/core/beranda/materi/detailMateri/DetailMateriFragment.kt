@@ -64,7 +64,7 @@ class DetailMateriFragment : Fragment() {
             setupBanner(materiData)
             displayPdf(materiData.fileUrl)
         } else {
-            Toast.makeText(requireContext(), "Data tidak tersedia", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Data not found", Toast.LENGTH_SHORT).show()
         }
 
         viewModel.getFavoriteData().observe(viewLifecycleOwner) { materiBM ->
@@ -83,12 +83,12 @@ class DetailMateriFragment : Fragment() {
                         item.setIcon(R.drawable.baseline_bookmark_24)
 //                        viewModel.insertMateriBookMark(materiBookMark!!)
                         viewModel.addBookmarkToFirebase(dataLogin.token!!, materiBookMark!!)
-                        Toast.makeText(requireContext(), "Berhasil menambahkan ke Bookmark", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Successfully added to Bookmark", Toast.LENGTH_SHORT).show()
                     } else {
                         isFavorite = false
                         item.setIcon(R.drawable.baseline_bookmark_border_24)
 //                        viewModel.deleteMateriBookMark(materiBookMark!!.id)
-                        Toast.makeText(requireContext(), "Menghapus dari Bookmark", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Deleted from Bookmarks", Toast.LENGTH_SHORT).show()
                     }
                     true
                 }

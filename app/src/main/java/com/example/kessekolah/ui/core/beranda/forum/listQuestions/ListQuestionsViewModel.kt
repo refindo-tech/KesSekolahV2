@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class ListQuestionsViewModel : ViewModel() {
-    private val questionRef = FirebaseDatabase.getInstance().getReference("tanya ahli")
+    private val questionRef = FirebaseDatabase.getInstance().getReference("ask_expert")
     private val _questionList = MutableLiveData<List<PostConsultation>>()
     val questionList: LiveData<List<PostConsultation>> = _questionList
     private val _loading = MutableLiveData<Boolean>()

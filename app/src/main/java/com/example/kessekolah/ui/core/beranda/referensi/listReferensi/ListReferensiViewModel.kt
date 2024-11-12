@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.kessekolah.data.database.MateriData
-import com.example.kessekolah.data.repo.MateriRepository
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -14,7 +13,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 
 class ListReferensiViewModel : ViewModel() {
-    private val materiRef = FirebaseDatabase.getInstance().getReference("referensi")
+    private val materiRef = FirebaseDatabase.getInstance().getReference("references")
     private val _materiList = MutableLiveData<List<MateriData>>()
     val materiList: LiveData<List<MateriData>> = _materiList
     private val _loading = MutableLiveData<Boolean>()

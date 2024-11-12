@@ -1,21 +1,17 @@
 package com.example.kessekolah.ui.core.beranda.forum.detailQuestion
 
-import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.kessekolah.data.database.Answer
-import com.example.kessekolah.data.database.PostConsultation
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.storageMetadata
 
 class DetailQuestionViewModel : ViewModel() {
-    private val databaseRef = FirebaseDatabase.getInstance().getReference("tanya ahli")
+    private val databaseRef = FirebaseDatabase.getInstance().getReference("ask_expert")
     private val _answerList = MutableLiveData<List<Answer>>()
     val answerList: LiveData<List<Answer>> = _answerList
     private val _loading = MutableLiveData<Boolean>()
@@ -32,11 +28,11 @@ class DetailQuestionViewModel : ViewModel() {
         answerRef.setValue(answer)
             .addOnSuccessListener {
                 _loading.value = false
-                _messageText.value = "Jawaban berhasil dikirim"
+                _messageText.value = "successfully sent question"
             }
             .addOnFailureListener { error ->
                 _loading.value = false
-                _messageText.value = "Gagal mengirim jawaban: ${error.message}"
+                _messageText.value = "failed sent question: ${error.message}"
             }
     }
 

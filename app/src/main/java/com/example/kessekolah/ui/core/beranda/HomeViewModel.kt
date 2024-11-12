@@ -12,8 +12,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class HomeViewModel : ViewModel() {
-    private val materiRef = FirebaseDatabase.getInstance().getReference("materi")
-    private val videoRef = FirebaseDatabase.getInstance().getReference("video")
+    private val materiRef = FirebaseDatabase.getInstance().getReference("lessons")
+    private val videoRef = FirebaseDatabase.getInstance().getReference("video_lessons")
     private val _materiList = MutableLiveData<List<MateriData>>()
     val materiList: LiveData<List<MateriData>> = _materiList
     private val _traditionalMedicineList = MutableLiveData<List<MateriData>>()

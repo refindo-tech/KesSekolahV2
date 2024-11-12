@@ -1,24 +1,21 @@
 package com.example.kessekolah.ui.core.beranda.referensi.editReferensi
 
 import android.app.ProgressDialog
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.kessekolah.R
 import com.example.kessekolah.data.database.MateriData
-import com.example.kessekolah.databinding.FragmentEditMateriBinding
 import com.example.kessekolah.databinding.FragmentEditReferensiBinding
 import com.example.kessekolah.model.BookMarkViewModel
-import com.example.kessekolah.model.EditMateriViewModel
 import com.example.kessekolah.ui.adapter.IlusPickerAdapter
 import com.example.kessekolah.viewModel.ViewModelFactoryBookMark
 import kotlinx.coroutines.launch
@@ -66,7 +63,7 @@ class EditReferensiFragment : Fragment() {
     private fun setupData() = with(binding.inForm) {
         textJudulMateri.setText(data.judul)
         textTahun.setText(data.tahun)
-        tvPilihIlustrasi.setText("Ilustrasi ${data.dataIlus} dipilih!")
+        tvPilihIlustrasi.setText("Illustration ${data.dataIlus} selected!")
         btnAddFile.setText(data.fileName)
 
         val listAdapter = IlusPickerAdapter(listIlus)
@@ -76,7 +73,7 @@ class EditReferensiFragment : Fragment() {
         listAdapter.setOnItemClickCallback(object: IlusPickerAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Int) {
                 numberIlus = data
-                tvPilihIlustrasi.text = "Ilustrasi $data dipilih!"
+                tvPilihIlustrasi.text = "Illustration $data selected!"
             }
 
         })
@@ -91,7 +88,7 @@ class EditReferensiFragment : Fragment() {
             if (mJudul.isEmpty() || mTahun.isEmpty() || numberIlus == 0) {
                 Toast.makeText(
                     requireContext(),
-                    "Lengkapi inputan",
+                    "Complete the input",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
@@ -105,9 +102,9 @@ class EditReferensiFragment : Fragment() {
 
     private fun responseHandler(isError: Boolean) {
         if (isError) {
-            Toast.makeText(requireContext(), "Data materi gagal dirubah", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Failed to change data lesson", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(requireContext(), "Data materi berhasil dirubah", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Data lesson successfully changed", Toast.LENGTH_SHORT).show()
             findNavController().navigateUp()
             findNavController().previousBackStackEntry?.also {
                 it.savedStateHandle.set("updateBookmarks", true)

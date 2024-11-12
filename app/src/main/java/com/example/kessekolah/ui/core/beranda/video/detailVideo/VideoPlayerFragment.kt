@@ -1,12 +1,9 @@
 package com.example.kessekolah.ui.core.beranda.video.detailVideo
 
 import android.app.AlertDialog
-import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Color
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,16 +14,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.kessekolah.R
-import com.example.kessekolah.data.database.MateriData
 import com.example.kessekolah.data.database.VideoList
-import com.example.kessekolah.databinding.FragmentListVideoBinding
 import com.example.kessekolah.databinding.FragmentVideoPlayerBinding
-import com.example.kessekolah.ui.core.beranda.materi.detailMateri.FlipBookTestFragmentArgs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener
@@ -43,10 +37,10 @@ class VideoPlayerFragment : Fragment() {
     private lateinit var youTubePlayer: YouTubePlayer
 
     private val questions = listOf(
-        "Apakah Anda merasa isi materi ini mudah dipahami?",
-        "Apakah penyajian materi ini menarik dan nyaman dilihat?",
-        "Apakah elemen visual di aplikasi ini cukup jelas dan membantu?",
-        "Apakah aplikasi ini dapat mendukung proses pembelajaran kesehatan?"
+        "Do you feel that the content of this lesson is easy to understand?",
+        "Is the presentation of this lesson interesting and visually comfortable?",
+        "Are the visual elements in this app clear and helpful?",
+        "Does this app support the health learning process?"
     )
 
     private val answers = mutableListOf<String?>()
@@ -180,7 +174,7 @@ class VideoPlayerFragment : Fragment() {
         nextButton.setOnClickListener {
             val selectedOptionId = radioGroup.checkedRadioButtonId
             if (selectedOptionId == -1) {
-                Toast.makeText(requireContext(), "Pilih jawaban terlebih dahulu", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Select the answer first", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -199,7 +193,7 @@ class VideoPlayerFragment : Fragment() {
             } else {
                 // Submit the answers
                 dialog.dismiss()
-                Toast.makeText(requireContext(), "Quiz selesai. Jawaban: $answers", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Quiz completed. Answers: $answers", Toast.LENGTH_LONG).show()
                 findNavController().navigateUp() // Navigate up after submit
             }
         }

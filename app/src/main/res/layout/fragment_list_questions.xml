@@ -22,7 +22,7 @@
             android:background="?attr/colorSurface"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
-            app:title="List Pertanyaan"
+            app:title="List Questions"
             app:titleTextAppearance="@style/Theme.IniDesakuBeta.Text.NavbarTitlee"
             app:titleCentered="true">
 

@@ -18,7 +18,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnSearch"
-            android:text="Hi"
+            android:text="@string/hi"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
 
@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="-32dp"
                     android:layout_marginTop="-12dp"
-                    android:text="Materi Baru\nSetiap Hari!"
+                    android:text="@string/hint_banner_news"
                     app:layout_constraintTop_toTopOf="@id/textTitle"
                     app:layout_constraintStart_toEndOf="@id/ilusBanner"
                     app:layout_constraintBottom_toBottomOf="@id/ilusBanner"
@@ -135,7 +135,9 @@
             android:orientation="vertical">
 
             <include layout="@layout/item_banner_materi_home_shimmer"/>
-            <include layout="@layout/item_banner_materi_home_shimmer"/>
+
+            <include layout="@layout/item_banner_materi_home_shimmer" />
+
             <include layout="@layout/item_banner_materi_home_shimmer"/>
         </LinearLayout>
 
@@ -156,7 +158,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/materi"
+                android:text="@string/hint_home_materi"
                 android:theme="@style/Theme.IniDesakuBeta.Text.Headline4Black"
                 />
 
@@ -199,7 +201,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Video"
+                android:text="@string/hint_home_video"
                 android:theme="@style/Theme.IniDesakuBeta.Text.Headline4Black"
                 />
 
@@ -232,7 +234,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pengobatan Tradisional"
+                android:text="@string/hint_home_pt"
                 android:theme="@style/Theme.IniDesakuBeta.Text.Headline4Black"
                 />
 

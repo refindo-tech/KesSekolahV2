@@ -16,7 +16,7 @@ import com.google.firebase.storage.FirebaseStorage
 
 
 class ListMateriViewModel(application: Application) : ViewModel() {
-    private val materiRef = FirebaseDatabase.getInstance().getReference("materi")
+    private val materiRef = FirebaseDatabase.getInstance().getReference("lessons")
     private val _materiList = MutableLiveData<List<MateriData>>()
     val materiList: LiveData<List<MateriData>> = _materiList
     private val _loading = MutableLiveData<Boolean>()

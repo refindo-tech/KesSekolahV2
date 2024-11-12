@@ -72,7 +72,7 @@ class AddQuestionFragment : Fragment() {
             if (guestName.isEmpty() || question.isEmpty()){
                 Toast.makeText(
                     requireContext(),
-                    "Lengkapi inputan",
+                    "complete the input",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -200,7 +200,7 @@ class AddQuestionFragment : Fragment() {
         }
         viewModel.messageText.observe(viewLifecycleOwner) { message ->
             Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
-            if (message == "Berhasil Mengirim Pertanyaan") {
+            if (message == "successfully sent question") {
                 findNavController().navigateUp()
             }
         }

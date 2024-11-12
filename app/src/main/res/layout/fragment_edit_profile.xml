@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="4dp"
-        android:text="Klik gambar untuk mengganti"
+        android:text="@string/hint_edit_image"
         android:textAlignment="center"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +85,7 @@
         android:layout_height="50dp"
         android:layout_margin="16dp"
         android:fontFamily="@font/fredoka_medium"
-        android:text="Edit Profil"
+        android:text="@string/btn_edit_profile"
         android:textColor="@color/accent1"
         android:textAllCaps="false"
         android:textSize="20sp"

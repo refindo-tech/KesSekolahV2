@@ -1,19 +1,17 @@
 package com.example.kessekolah.ui.core.beranda.video.listVideo
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kessekolah.R
 import com.example.kessekolah.data.database.VideoList
 import com.example.kessekolah.data.remote.LoginData
 import com.example.kessekolah.databinding.FragmentListVideoBinding
-import com.example.kessekolah.ui.adapter.MateriListAdapter
-import com.example.kessekolah.ui.adapter.MateriListSiswaAdapter
 import com.example.kessekolah.ui.adapter.VideoListAdapter
 import com.example.kessekolah.ui.adapter.VideoListSiswaAdapter
 import com.example.kessekolah.utils.LoginPreference
@@ -178,7 +176,7 @@ class ListVideoFragment : Fragment() {
     private fun showDialog(data: VideoList) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.title_dialog_video_delete))
-            .setMessage("Video \"${data.judul}\" akan dihapus dari database")
+            .setMessage("Video \"${data.judul}\" will be deleted from database")
             .setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }

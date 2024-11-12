@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="8dp"
-            android:text="Pengaturan"
+            android:text="@string/setting"
             android:theme="@style/Theme.IniDesakuBeta.Text.Headline6Primary"
             app:layout_constraintEnd_toEndOf="@id/bannerProfile"
             app:layout_constraintStart_toStartOf="@id/bannerProfile"
@@ -139,7 +139,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dark Mode"
+                android:text="@string/dark_mode"
                 android:theme="@style/Theme.IniDesakuBeta.Text.Headline6" />
 
             <View

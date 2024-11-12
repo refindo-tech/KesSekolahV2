@@ -5,10 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.kessekolah.data.database.VideoList
 import com.google.firebase.database.FirebaseDatabase
-import java.util.UUID
 
 class AddVideoViewModel : ViewModel() {
-    private val videoRef = FirebaseDatabase.getInstance().getReference("video")
+    private val videoRef = FirebaseDatabase.getInstance().getReference("video_lessons")
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
     private val _messageText = MutableLiveData<String>()
@@ -41,11 +40,11 @@ class AddVideoViewModel : ViewModel() {
         videoRef.child(videoId).setValue(video)
             .addOnSuccessListener {
                 _loading.value = false
-                _messageText.value = "Berhasil Menambahkan Video"
+                _messageText.value = "Successfully Added Video"
             }
             .addOnFailureListener {
                 _loading.value = false
-                _messageText.value = "Gagal Menambahkan Video"
+                _messageText.value = "Failed to Add Video"
             }
     }
 

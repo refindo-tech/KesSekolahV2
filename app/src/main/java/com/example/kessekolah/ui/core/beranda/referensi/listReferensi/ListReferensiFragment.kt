@@ -1,24 +1,20 @@
 package com.example.kessekolah.ui.core.beranda.referensi.listReferensi
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kessekolah.R
 import com.example.kessekolah.data.database.MateriData
 import com.example.kessekolah.data.remote.LoginData
-import com.example.kessekolah.databinding.FragmentListMateriBinding
 import com.example.kessekolah.databinding.FragmentListReferensiBinding
-import com.example.kessekolah.model.ListMateriViewModel
 import com.example.kessekolah.ui.adapter.MateriListAdapter
 import com.example.kessekolah.ui.adapter.MateriListSiswaAdapter
 import com.example.kessekolah.utils.LoginPreference
-import com.example.kessekolah.viewModel.ViewModelFactoryBookMark
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ListReferensiFragment : Fragment() {
@@ -149,7 +145,7 @@ class ListReferensiFragment : Fragment() {
     private fun showDialog(data: MateriData) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.title_dialog_delete))
-            .setMessage("Materi \"${data.judul}\" akan dihapus dari database")
+            .setMessage("Lesson \"${data.judul}\" will be deleted from database")
             .setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }

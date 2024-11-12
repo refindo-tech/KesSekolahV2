@@ -8,12 +8,10 @@ import com.example.kessekolah.data.database.VideoList
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.Query
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.storage.FirebaseStorage
 
 class ListVideoViewModel : ViewModel() {
-    private val videoRef = FirebaseDatabase.getInstance().getReference("video")
+    private val videoRef = FirebaseDatabase.getInstance().getReference("video_lessons")
     private val _videoList = MutableLiveData<List<VideoList>>()
     val videoList: LiveData<List<VideoList>> = _videoList
     private val _loading = MutableLiveData<Boolean>()

@@ -1,11 +1,11 @@
 package com.example.kessekolah.ui.core.beranda.forum.listQuestions
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kessekolah.R
@@ -13,8 +13,6 @@ import com.example.kessekolah.data.database.PostConsultation
 import com.example.kessekolah.data.remote.LoginData
 import com.example.kessekolah.databinding.FragmentListQuestionsBinding
 import com.example.kessekolah.ui.adapter.QuestionListAdapter
-import com.example.kessekolah.ui.core.beranda.materi.listMateri.ListMateriFragmentDirections
-import com.example.kessekolah.ui.core.beranda.video.listVideo.ListVideoFragmentDirections
 import com.example.kessekolah.utils.LoginPreference
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -99,7 +97,7 @@ class ListQuestionsFragment : Fragment() {
     private fun showDialog(data: PostConsultation) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.title_dialog_question_delete))
-            .setMessage("Pertanyaan dari \"${data.name}\" akan dihapus dari database")
+            .setMessage("questions from \"${data.name}\" will be deleted from the database")
             .setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }

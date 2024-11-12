@@ -9,7 +9,7 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
 class EditReferensiViewModel : ViewModel() {
-    private val materiRef = FirebaseDatabase.getInstance().getReference("referensi")
+    private val materiRef = FirebaseDatabase.getInstance().getReference("references")
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
 

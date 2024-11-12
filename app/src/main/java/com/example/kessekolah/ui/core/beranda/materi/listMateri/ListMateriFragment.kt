@@ -183,7 +183,7 @@ class ListMateriFragment : Fragment() {
     private fun showDialog(data: MateriData) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.title_dialog_delete))
-            .setMessage("Materi \"${data.judul}\" akan dihapus dari database")
+            .setMessage("Lesson \"${data.judul}\" will be deleted from database")
             .setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }

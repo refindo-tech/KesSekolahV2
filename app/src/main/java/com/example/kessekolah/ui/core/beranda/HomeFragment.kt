@@ -31,10 +31,10 @@ class HomeFragment : Fragment() {
     private lateinit var dataFirst: MateriData
 
     private val listButton = listOf(
-        ButtonCoreFeatures("@drawable/ic_book", "Materi"),
+        ButtonCoreFeatures("@drawable/ic_book", "Lessons"),
         ButtonCoreFeatures("@drawable/ic_video", "Video"),
-        ButtonCoreFeatures("@drawable/ic_professional", "Tanya Ahli"),
-        ButtonCoreFeatures("@drawable/ic_e_book", "Referensi"),
+        ButtonCoreFeatures("@drawable/ic_professional", "Ask the Expert"),
+        ButtonCoreFeatures("@drawable/ic_e_book", "References"),
     )
 
     private val videoList = listOf(
@@ -110,7 +110,7 @@ class HomeFragment : Fragment() {
                 override fun onItemClicked(data: String) {
                     Log.i("BUTTON CLICK out when", data)
                     when (data) {
-                        "Materi" -> {
+                        "Lessons" -> {
                             findNavController().navigate(R.id.action_homeFragment2_to_listMateriFragment)
                             Log.i("BUTTON CLICK", data)
                         }
@@ -118,11 +118,11 @@ class HomeFragment : Fragment() {
                             findNavController().navigate(R.id.action_homeFragment2_to_listVideoFragment)
                             Log.i("BUTTON CLICK", data)
                         }
-                        "Tanya Ahli" -> {
+                        "Ask the Expert" -> {
                             findNavController().navigate(R.id.action_homeFragment2_to_listQuestionsFragment)
                             Log.i("BUTTON CLICK", data)
                         }
-                        "Referensi" -> {
+                        "References" -> {
                             findNavController().navigate(R.id.action_homeFragment2_to_listReferensiFragment)
                             Log.i("BUTTON CLICK", data)
                         }

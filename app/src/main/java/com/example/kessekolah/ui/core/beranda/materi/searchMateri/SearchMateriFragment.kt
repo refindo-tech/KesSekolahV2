@@ -3,7 +3,6 @@ package com.example.kessekolah.ui.core.beranda.materi.searchMateri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -11,17 +10,15 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kessekolah.R
 import com.example.kessekolah.data.database.MateriData
-import com.example.kessekolah.databinding.FragmentEditProfileBinding
 import com.example.kessekolah.databinding.FragmentSearchMateriBinding
 import com.example.kessekolah.model.ListMateriViewModel
 import com.example.kessekolah.ui.adapter.MateriListAdapter
-import com.example.kessekolah.ui.core.beranda.materi.listMateri.ListMateriFragmentDirections
 import com.example.kessekolah.viewModel.ViewModelFactoryBookMark
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -126,7 +123,7 @@ class SearchMateriFragment : Fragment() {
     private fun showDialog(data: MateriData) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.title_dialog_delete))
-            .setMessage("Materi \"${data.judul}\" akan dihapus dari database")
+            .setMessage("Lesson \"${data.judul}\" will be deleted from database")
             .setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }

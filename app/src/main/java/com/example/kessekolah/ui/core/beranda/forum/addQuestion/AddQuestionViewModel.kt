@@ -10,7 +10,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.storageMetadata
 
 class AddQuestionViewModel : ViewModel() {
-    private val databaseRef = FirebaseDatabase.getInstance().getReference("tanya ahli")
+    private val databaseRef = FirebaseDatabase.getInstance().getReference("ask_expert")
     private val storage = FirebaseStorage.getInstance().reference
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
@@ -20,7 +20,7 @@ class AddQuestionViewModel : ViewModel() {
     fun addQuestion(guestId: String, name: String, question: String, description: String, timestamp: String, imageUri: Uri?) {
         _loading.value = true
         if (imageUri != null) {
-            val fileRef = storage.child("tanya_ahli/$guestId/$guestId")
+            val fileRef = storage.child("ask_expert/$guestId/$guestId")
             val metadata = storageMetadata {
                 setCustomMetadata("owner", guestId)
             }
@@ -36,11 +36,11 @@ class AddQuestionViewModel : ViewModel() {
                     )
                     databaseRef.child(guestId).setValue(userQuestion).addOnSuccessListener {
                         _loading.value = false
-                        _messageText.value = "Berhasil Mengirim Pertanyaan"
+                        _messageText.value = "successfully sent question"
                     }
                         .addOnFailureListener {
                             _loading.value = false
-                            _messageText.value = "Gagal Mengirim Pertanyaan"
+                            _messageText.value = "failed to send question"
                         }
                 }
             }
@@ -54,11 +54,11 @@ class AddQuestionViewModel : ViewModel() {
             )
             databaseRef.child(guestId).setValue(userQuestion).addOnSuccessListener {
                 _loading.value = false
-                _messageText.value = "Berhasil Mengirim Pertanyaan"
+                _messageText.value = "successfully sent question"
             }
                 .addOnFailureListener {
                     _loading.value = false
-                    _messageText.value = "Gagal Mengirim Pertanyaan"
+                    _messageText.value = "failed to send question"
                 }
         }
     }
